@@ -1,4 +1,4 @@
-console.log("Rock, Paper, Scissors")
+// Game: Rock, Paper, Scissors
 
 // Notes:
 // This is essentially a "value comparison" game
@@ -6,6 +6,7 @@ console.log("Rock, Paper, Scissors")
 // The other player chooses a value
 // The values are evaluated and compared based on game rules
 // A winner and loser are declared
+// Repeat until bored
 
 // ---------------------------------------------------------------------
 
