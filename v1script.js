@@ -24,17 +24,17 @@ let player1Input = prompt("Choose rock, paper, or scissors")
 console.log(`You chose:`, player1Input);
 
 let player2Input = Math.floor(Math.random() * 3)
-console.log(player2Input);
+//console.log(player2Input);
 
 if (player2Input == 0){
     player2Input = "rock";
-    console.log(player2Input);
+    console.log(`I chose:`, player2Input);
 } else if (player2Input == 1){
     player2Input = "paper";
-    console.log(player2Input);
+    console.log(`I chose:`, player2Input);
 } else if (player2Input == 2){
     player2Input = "scissors";
-    console.log(player2Input);
+    console.log(`I chose:`, player2Input);
 }
 
 // Step 2: Compare inputs
@@ -49,6 +49,18 @@ if (player1Input == "rock" && player2Input == "rock"){
     winner = player2;
 } else if (player1Input == "rock" && player2Input == "scissors"){
     winner = player1;
-}
+} else if (player1Input == "paper" && player2Input == "paper"){
+    winner = null;
+} else if (player1Input == "paper" && player2Input == "rock"){
+    winner = player1;
+} else if (player1Input == "paper" && player2Input == "scissors"){
+    winner = player2;
+} else if (player1Input == "scissors" && player2Input == "scissors"){
+    winner = null;
+} else if (player1Input == "scissors" && player2Input == "paper"){
+    winner = player1;
+} else if (player1Input == "scissors" && player2Input == "rock"){
+    winner = player2;
+} 
 
 console.log(winner)
