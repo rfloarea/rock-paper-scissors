@@ -1,18 +1,20 @@
 // --------- version 2: fully functional game --------- //
 
 // --------- TODO --------- //
-// 1. Write in case insensitivity for player1 inputs
+// 1. (DONE) Write in case insensitivity for player1 inputs
 // 2. Count each round
 // 3. Account for draws by replaying a round (award no points)
 // 4. Award a point for each round won
 // 5. Display total points for each player after the game ends
 // 6. Implement a loop to repeat function calls
+// 7. Wrap script in a function called `playRound()`
 
 // --------- Pseudocode --------- //
 
 // Step 1: Get inputs
     // 1a: Prompt player1 for inputs: "rock", "paper", or "scissors"
-        // 1a1: Store input value
+        // 1a1: Convert input to a lowercase string
+        // 1a2: Store input value
     // 1b: Generate a random integer for player2 (computer) within set range (0,2)
         // 1b1: Store input value
         // 1b2: Convert stored integer to a string
@@ -37,6 +39,7 @@
 
 // Step 1: Get inputs
 let player1Input = prompt("Choose rock, paper, or scissors")
+player1Input = player1Input.toLowerCase()
 console.log(`You chose,`, player1Input);
 
 let player2Input = Math.floor(Math.random() * 3)
