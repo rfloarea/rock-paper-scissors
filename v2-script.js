@@ -61,7 +61,7 @@ let player1Input = prompt("Choose rock, paper, or scissors");
 let player2Input = Math.floor(Math.random() * 3);
 
 // 1c: Call showInput() function to print inputs
-showInput(player1Input, player2Input);
+showInput();
 
 function showInput() {
     // 1c1: Convert `player1Input` to a lowercase string
