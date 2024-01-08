@@ -11,30 +11,33 @@
 
 // --------- Pseudocode --------- //
 
-// Step 1: Get inputs, or getInput()
+// Step 1: Get inputs and print
     // 1a: Prompt player1 for inputs: "rock", "paper", or "scissors"
-        // 1a1: Convert input to a lowercase string
-        // 1a2: Store input value as `player1Input`
+        // 1a1: Store input value as `player1Input`
     // 1b: Generate a random integer for player2 (computer) within set range (0,2)
         // 1b1: Store input value as `player2Input`
-        // 1b2: Reassign `player2Input` from an integer to a string
-            // if player2Input == 0, then convert player2Input to "rock";
-            // if player2Input == 1, then convert player2Input to "paper";
-            // if player2Input == 2, then convert player2Input to "scissors";
+    // 1c: Call showInputs()
+        // 1c1: Convert `player1Input` to a lowercase string
+        // 1c2: Print `player1Input`
+        // 1c3: Reassign `player2Input` from an integer to a string
+            // 1c3a: if player2Input == 0, then convert player2Input to "rock" and print;
+            // 1c3b: if player2Input == 1, then convert player2Input to "paper" and print;
+            // 1c3c: if player2Input == 2, then convert player2Input to "scissors" and print;
+        // 1c4: Print `player2Input`
     // 1c: Call gameLogic() with player1Input and player2Input as parameters
-// Step 2: Core game logic, or gameLogic()
+// Step 2: Evaluate inputs, or evalInput(). Calculate player scores, or calcScore()
     // 2a: Evaluate/compare 'player1Input' and 'player2Input'
         // 2a1: Assign initial values for each player
         // 2a2: Assign initial values for `win` and `draw`
         // 2a3: Set win conditions for "rock" vs "paper" vs "scissors"
-        // 2a4: Determine if a player meets any one win condition
-            // 2a4a: If player1 meets a win condition, award them 1 point (increment `player1Score` by 1)
-                // 2a4a1: Call `endRound()`
-            // 2a4b: If player2 meets a win condition, award them 1 point (increment `player2Score` by 1)
-                // 2a4b1: Call `endRound()`
-            // 2a4c: If a draw is evaluated, no points are awarded, the round is restarted
-                // 2a4c1: Print "It's a draw! Let's replay this round."
-                // 2a4c2: Call `getInput()` to replay the round
+    // 2b: Determine if a player meets any one win condition
+        // 2b1: If player1 meets a win condition, award them 1 point (increment `player1Score` by 1)
+            // 2b1a: Call `endRound()`
+        // 2b2: If player2 meets a win condition, award them 1 point (increment `player2Score` by 1)
+            // 2b2a: Call `endRound()`
+        // 2b3: If a draw is evaluated, no points are awarded, the round is restarted
+            // 2b3a: Print "It's a draw! Let's replay this round."
+            // 2b3b: Call `getInput()` to replay the round
 // Step 3: Count round and print output, or `endRound()`
     // 3a: If `player1Score` was incremented, print "You win! Great job!"
     // 3b: If `player2Score was incremented, print "I win!"
@@ -47,27 +50,35 @@
 
 // --------- Code --------- //
 
-// Step 1: Get inputs, or getInput()
+// Step 1: Get inputs and print
 
-// prompt player1
+// 1a: Prompt player1 for inputs: "rock", "paper", or "scissors"
+// 1a2: Store input value as `player1Input`
 let player1Input = prompt("Choose rock, paper, or scissors");
-//prompt player2
+
+// 1b: Generate a random integer for player2 (computer) within set range (0,2)
+// 1b1: Store input value as `player2Input`
 let player2Input = Math.floor(Math.random() * 3);
 
-getInput(player1Input, player2Input);
+// 1c: Call showInput() function to print inputs
+showInput(player1Input, player2Input);
 
-function getInput() {
-    // print player1's input
+function showInput() {
+    // 1c1: Convert `player1Input` to a lowercase string
     player1Input = player1Input.toLowerCase();
+    // 1c2: Print `player1Input`
     console.log(`You chose,`, player1Input);
     
-    //print player2's input
+    // 1c3: Reassign `player2Input` from an integer to a string
+    // 1c3a: if player2Input == 0, then convert player2Input to "rock" and print;
     if (player2Input == 0){
         player2Input = "rock";
         console.log(`I chose,`, player2Input);
+    // 1c3b: if player2Input == 1, then convert player2Input to "paper" and print;
     } else if (player2Input == 1){
         player2Input = "paper";
         console.log(`I chose,`, player2Input);
+    // 1c3c: if player2Input == 2, then convert player2Input to "scissors" and print;
     } else if (player2Input == 2){
         player2Input = "scissors";
         console.log(`I chose,`, player2Input);
@@ -75,9 +86,7 @@ function getInput() {
 }
 
 
-
-
-// Step 2: Evaluate inputs and award points
+// Step 2: Evaluate inputs and calculate points
 
 let player1 = 0
 let player2 = 0
