@@ -16,3 +16,15 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice());
+
+// great! now go get that playerChoice!
+
+function getPlayerChoice() {
+    let playerChoice = prompt("Choose rock, paper, or scissors.");
+    playerChoice = playerChoice.toLowerCase();
+    return playerChoice;
+}
+
+console.log(getPlayerChoice());
+
+// awesome! you did it! now, let's make them fight!
