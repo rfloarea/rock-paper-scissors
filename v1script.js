@@ -1,27 +1,31 @@
-// --- Pseudocode --- version 1: essential game loop functions
+// --------- version 1: essential game loop functions --------- //
+
+// --------- Pseudocode --------- //
 
 // Step 1: Get inputs
     // 1a: Prompt player1 for inputs: "rock", "paper", or "scissors"
         // 1a1: Store input value
-    // 1b: Generate a random integer for player2 (computer) within set range
+    // 1b: Generate a random integer for player2 (computer) within set range (0,2)
         // 1b1: Store input value
-    // 1c: Convert stored integer to corresponding string value: "rock", "paper", or "scissors"
-        // if player2Input == 0, then convert player2Input to "rock";
-        // if player2Input == 1, then convert player2Input to "paper";
-        // if player2Input == 2, then convert player2Input to "scissors";
+        // 1b2: Convert stored integer to a string
+            // if player2Input == 0, then convert player2Input to "rock";
+            // if player2Input == 1, then convert player2Input to "paper";
+            // if player2Input == 2, then convert player2Input to "scissors";
 // Step 2: Evaluate inputs
-    // 2a: Establish win conditions
-    // 2b: Determine which player meets any one win condition
-        // 2b1: If neither, then it's a draw
-    // 2c: Store winner value
+    // 2a: Assign initial values for each player
+    // 2b: Assign initial values for `win` and `draw`
+    // 2c: Establish win conditions through comparison
+    // 2d: Determine which player meets any one win condition
+    // 2e: Reassign player1 or player2 the `winner` value
+        // 2e1: If neither player meets a win condition, then it's a draw
+        // 2e1: A `draw` value is reassigned
 // Step 3: Print output
-    // if winner value is player1, print "You win!"
-    // if winner value is player2, print "You lose."
-    // if winner value for player1 and player2 are equal, print "It's a draw!"
+    // if player1 matches the `winner` value, print "You win! Great job!"
+    // if player2 matches the `winner` value, print "I win!"
+    // if player1 matches the `draw` value, print "It's a draw!"
 
-// Repeat steps 1-3 until five cycles are completed
 
-// --- Code ---
+// --------- Code --------- //
 
 // Step 1: Get inputs
 let player1Input = prompt("Choose rock, paper, or scissors")
@@ -67,12 +71,12 @@ if (player1Input == "rock" && player2Input == "rock"){
     player2 = winner;
 }
 
-// Step 3: Print winner
+// Step 3: Print output
 
 if (player1 == winner){
     console.log("You win! Great job!");
 } else if (player2 == winner){
     console.log("I win!")
 } else if (player1 == draw){
-    console.log("It's a tie!")
+    console.log("It's a draw!")
 }
