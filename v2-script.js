@@ -47,23 +47,35 @@
 
 // --------- Code --------- //
 
-// Step 1: Get inputs
-let player1Input = prompt("Choose rock, paper, or scissors")
-player1Input = player1Input.toLowerCase()
-console.log(`You chose,`, player1Input);
+// Step 1: Get inputs, or getInput()
 
-let player2Input = Math.floor(Math.random() * 3)
+// prompt player1
+let player1Input = prompt("Choose rock, paper, or scissors");
+//prompt player2
+let player2Input = Math.floor(Math.random() * 3);
 
-if (player2Input == 0){
-    player2Input = "rock";
-    console.log(`I chose,`, player2Input);
-} else if (player2Input == 1){
-    player2Input = "paper";
-    console.log(`I chose,`, player2Input);
-} else if (player2Input == 2){
-    player2Input = "scissors";
-    console.log(`I chose,`, player2Input);
+getInput(player1Input, player2Input);
+
+function getInput() {
+    // print player1's input
+    player1Input = player1Input.toLowerCase();
+    console.log(`You chose,`, player1Input);
+    
+    //print player2's input
+    if (player2Input == 0){
+        player2Input = "rock";
+        console.log(`I chose,`, player2Input);
+    } else if (player2Input == 1){
+        player2Input = "paper";
+        console.log(`I chose,`, player2Input);
+    } else if (player2Input == 2){
+        player2Input = "scissors";
+        console.log(`I chose,`, player2Input);
+    }
 }
+
+
+
 
 // Step 2: Evaluate inputs and award points
 
