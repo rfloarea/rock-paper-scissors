@@ -6,6 +6,8 @@
 let playerScore = 0
 let computerScore = 0
 let roundWinner = ``
+let playerChoice = ``
+let computerChoice = 0
 
 // now we need a function to get the computer's choice
 
@@ -35,7 +37,7 @@ console.log(getPlayerChoice());
 
 // awesome! you did it! now, let's make them fight!
 
-function playRound(playerChoice, computerChoice) {
+function playRound(getPlayerChoice, getComputerChoice) {
     // note: this is like what we already have in the v2 file, but simplified!
     if (playerChoice === computerChoice) {
         roundWinner = `draw`
