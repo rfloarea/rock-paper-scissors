@@ -32,27 +32,12 @@ function getComputerChoice(computerChoice) {
 
 
 
+// write a function that takes the userChoice and computerChoice and makes them fight
 
 
-
-// OLD CODE
-// function getComputerChoice() {
-//     let computerChoice = Math.floor(Math.random() * 3);
-//     switch (computerChoice) {
-//         case 0:
-//             computerChoice = `rock`;
-//             console.log(computerChoice);
-//             return;
-//         case 1:
-//             computerChoice = `paper`;
-//             console.log(computerChoice);
-//             return;
-//         case 2:
-//             computerChoice = `scissors`;
-//             console.log(computerChoice);
-//             return;
-//     }
-// }
+let roundWinner = ``;
+let playerScore = 0;
+let computerScore = 0;
 
 // function playRound(playerChoice, computerChoice) {
 //     if (playerChoice === computerChoice) {
