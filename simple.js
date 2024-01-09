@@ -1,28 +1,20 @@
-// --------- ??? --------- //
-// roundWinner is not being reassigned after playRound()
-// playerScore is not being incremented after playRound()
-// computerScore is not being incremented after playRound()
-
-
-// let playerScore = 0
-// let computerScore = 0
-// let roundWinner = ``
 let playerChoice = getPlayerChoice();
 let computerChoice = getComputerChoice();
 
-//playRound(playerChoice, computerChoice);
-
 function getPlayerChoice() {
+
     let playerChoice = prompt("Choose rock, paper, or scissors.").toLowerCase();
+    
     console.log(playerChoice);
+    
     return playerChoice;
 }
 
-// write a function that generates a computer choice of rock, paper, or scissors
+
 function getComputerChoice(computerChoice) {
-    // generate a random number
+    
 	computerChoice = Math.floor(Math.random() * 3);
-    // convert that number to a string
+    
 	if (computerChoice == 0) {
 		computerChoice = "rock";
         console.log(computerChoice);
