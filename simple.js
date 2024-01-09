@@ -18,23 +18,47 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
-function getComputerChoice() {
-    let computerChoice = Math.floor(Math.random() * 3);
-    switch (computerChoice) {
-        case 0:
-            computerChoice = `rock`;
-            console.log(computerChoice);
-            return;
-        case 1:
-            computerChoice = `paper`;
-            console.log(computerChoice);
-            return;
-        case 2:
-            computerChoice = `scissors`;
-            console.log(computerChoice);
-            return;
-    }
+// write a function that generates a computer choice of rock, paper, or scissors
+function getComputerChoice(computerChoice) {
+    // generate a random number
+	computerChoice = Math.floor(Math.random() * 3);
+    // convert that number to a string
+	if (computerChoice == 0) {
+		computerChoice = "rock";
+		return computerChoice;
+	} else if (computerChoice == 1) {
+		computerChoice = "paper";
+		return computerChoice;
+	} else {
+		computerChoice = "scissors";
+		return computerChoice;
+	}
 }
+
+console.log(getComputerChoice());
+
+
+
+
+
+// OLD CODE
+// function getComputerChoice() {
+//     let computerChoice = Math.floor(Math.random() * 3);
+//     switch (computerChoice) {
+//         case 0:
+//             computerChoice = `rock`;
+//             console.log(computerChoice);
+//             return;
+//         case 1:
+//             computerChoice = `paper`;
+//             console.log(computerChoice);
+//             return;
+//         case 2:
+//             computerChoice = `scissors`;
+//             console.log(computerChoice);
+//             return;
+//     }
+// }
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
