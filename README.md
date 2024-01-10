@@ -23,3 +23,6 @@ I did it! I figured out how to create a single loop of the game, but using funct
 My understanding of functions was very bad yesterday, so I got all messed up and struggled for hours. Which was good to experience. It taught me that it's really helpful to ACTUALLY UNDERSTAND WHAT YOU ARE DOING AND WHY. Huh, who knew.
 
 Now all that's left (for right now) is to create a way to keep score over many rounds and count the rounds as they go.
+
+Notes to future self:
+1. Remember this feeling. Remember how bad it feels to not find a solution while it feels so close. Remember how good it feels to spend the time to understand, and then *see* a solution.
