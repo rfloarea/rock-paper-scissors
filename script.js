@@ -1,5 +1,10 @@
+// TODAY: refine main game loop
+
 let playerChoice = getPlayerChoice();
 let computerChoice = getComputerChoice();
+let roundWinner = ``;
+let playerScore = 0;
+let computerScore = 0;
 
 function getPlayerChoice() {
 
@@ -31,9 +36,7 @@ function getComputerChoice(computerChoice) {
 }
 
 
-let roundWinner = ``;
-let playerScore = 0;
-let computerScore = 0;
+
 
 playRound(playerChoice, computerChoice);
 
