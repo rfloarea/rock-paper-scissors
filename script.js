@@ -1,66 +1,89 @@
-// TODAY: refine main game loop
-
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
+// initialize our round values
 let roundWinner = ``;
 let playerScore = 0;
 let computerScore = 0;
 
-function getPlayerChoice() {
+// create our element selectors that will change as the game is played
+const rockBtn = document.getElementById('rockBtn');
+const paperBtn = document.getElementById('paperBtn');
+const scissorBtn = document.getElementById('scissorBtn');
 
-    let playerChoice = prompt("Choose rock, paper, or scissors.").toLowerCase();
-    
-    console.log(`You chose: ${playerChoice}`);
-    
-    return playerChoice;
+const playerChoiceElement = document.getElementById('playerChoice');
+const computerChoiceElement = document.getElementById('computerChoice');
+
+const playerScoreElement = document.getElementById('playerScore');
+const computerScoreElement = document.getElementById('computerScore');
+const winnerMessageElement = document.getElementById('winnerMessage');
+
+// create our event listeners to get the player's selection
+rockBtn.addEventListener('click', () => clickEvent('ROCK'));
+paperBtn.addEventListener('click', () => clickEvent('PAPER'));
+scissorBtn.addEventListener('click', () => clickEvent('SCISSORS'));
+// TODO: create some sort of "play again" button
+
+// initiate the game loop using our player's choice
+function clickEvent(playerChoice) {
+  // call our function to get computerChoice and store value as computerChoice
+  const computerChoice = getComputerChoice();
+  // call our function to play a round using playerChoice and computerChoice as args
+  playRound(playerChoice, computerChoice);
+
 }
 
+// generate a choice for the computer
+function getComputerChoice() {
+  let randomNumber = Math.floor(Math.random() * 3);
+  console.log(randomNumber);
 
-function getComputerChoice(computerChoice) {
-    
-	computerChoice = Math.floor(Math.random() * 3);
-    
-	if (computerChoice == 0) {
-		computerChoice = "rock";
-        console.log(`I chose: ${computerChoice}`);
-		return computerChoice;
-	} else if (computerChoice == 1) {
-		computerChoice = "paper";
-        console.log(`I chose: ${computerChoice}`);
-		return computerChoice;
-	} else {
-		computerChoice = "scissors";
-        console.log(`I chose: ${computerChoice}`);
-		return computerChoice;
-	}
+  switch (randomNumber) {
+    case 0:
+      return 'ROCK'
+    case 1:
+      return 'PAPER'
+    case 2:
+      return 'SCISSORS'
+  }
 }
 
-
-
-
-playRound(playerChoice, computerChoice);
-
+// use our player and computer choices to play one round
 function playRound(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice) {
-        roundWinner = `It's a draw.`
-    }
-    else if (
-        (playerChoice === `rock` && computerChoice === `scissors`) ||
-        (playerChoice === `paper` && computerChoice === `rock`) ||
-        (playerChoice === `scissors` && computerChoice === `paper`)
-    ) {
-        ++playerScore
-        roundWinner = `You win!`
-    }
-    else if (
-        (computerChoice === `rock` && playerChoice === `scissors`) ||
-        (computerChoice === `paper` && playerChoice === `rock`) ||
-        (computerChoice === `scissors` && playerChoice === `paper`)
-    ) {
-        ++computerScore
-        roundWinner = `I win!`
-    }
-    console.log(roundWinner)
-    console.log(`Your score is: ${playerScore}`)
-    console.log(`My score is: ${computerScore}`)
+  // tie results
+  if (playerChoice === computerChoice){
+    roundWinner = `tie`
+  }
+  // player win results
+  if (
+    (playerChoice == 'ROCK' && computerChoice == 'SCISSORS') ||
+    (playerChoice == 'PAPER' && computerChoice == 'ROCK') ||
+    (playerChoice == 'SCISSORS' && computerChoice == 'PAPER')
+  ) {
+    roundWinner = `player`
+    playerScore++
+  }
+  // computer win results
+  if (
+    (computerChoice == 'ROCK' && playerChoice == 'SCISSORS') ||
+    (computerChoice == 'PAPER' && playerChoice == 'ROCK') ||
+    (computerChoice == 'SCISSORS' && playerChoice == 'PAPER')
+  ) {
+    roundWinner = `computer`
+    computerScore++
+  }
+  // call our function to update playerChoiceElement and computerChoiceElement
+  updateChoiceElements(playerChoice, computerChoice);
+  // call our function to update winnerMessageElement, playerScoreElement and computerScoreElement
+  updateScoreBoard(roundWinner, playerScore, computerScore);
+}
+
+function updateChoiceElements(playerChoice, computerChoice) {
+  //update playerChoiceElement
+  playerChoiceElement.textContent = playerChoice;
+  //update computerChoiceElement
+  computerChoiceElement.textContent = computerChoice;
+}
+
+function updateScoreBoard(roundWinner, playerScore, computerScore) {
+  roundWinnerElement.textContent = roundWinner;
+  playerScoreElement.textContent = `Player score: ${playerScore}`;
+  computerScoreElement.textContent = `Computer score: ${computerScore}`;
 }
