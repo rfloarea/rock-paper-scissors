@@ -1,4 +1,4 @@
-// ROCK, PAPER, SCISSORS //
+// --- GAME --- //
 
 let playerScore = 0
 let computerScore = 0
@@ -41,4 +41,22 @@ function getRandomChoice() {
 
 function isGameOver() {
   return playerScore === 5 || computerScore === 5
+}
+
+// --- UI --- //
+
+// add an event listener to all three buttons that triggers a round
+const rockBtn = document.getElementById('rockBtn');
+const paperBtn = document.getElementById('paperBtn');
+const scissorBtn = document.getElementById('scissorBtn');
+
+rockBtn.addEventListener('click', clickListener('ROCK'))
+paperBtn.addEventListener('click', clickListener('PAPER'))
+scissorBtn.addEventListener('click', clickListener('SCISSORS'))
+
+function clickListener() {
+    
+    // call playRound 
+    // call updateScores
+    // call getRandomChoice
 }
