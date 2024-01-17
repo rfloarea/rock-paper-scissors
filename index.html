@@ -4,26 +4,40 @@
         <meta charset="UTF-8">
         <title>Rock, Paper, Scissors</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
         <script src="./script.js"></script>
+        
+        <header>
+            <h1>Let's play rock, paper, scissors!</h1>
+        </header>
 
-        <h1>Let's play rock, paper, scissors!</h1>
+        <div id="scoreBoard">
+            <div id="scoreBoardTitle">
+                <h2>Score Board</h2>
+            </div>
+            <div id="winnerMessage">The first to 5 points wins!</div>
+            <div id="scoreCount">
+                <div id="playerScore">Player total score: </div>
+                <div id="computerScore">Computer total score: </div>
+            </div>
+        </div>
 
-        <div class="buttons">
+        <div id="choiceDisplay">
+            <div id="playerChoice">Player Choice</div>
+            <div id="computerChoice">Computer Choice</div>
+        </div>
+
+        <div id="buttons">
             <button id="rockBtn">Rock</button>
             <button id="paperBtn">Paper</button>
             <button id="scissorBtn">Scissors</button>
         </div>
-    
 
-        <div id="scoreboard">
-            <div id="round">Round number: </div>
-            <div id="player-score">Your total score: </div>
-            <div id="computer-score">My total score: </div>
+        <div id="gameOverModal">
+            
         </div>
-
-        <div id="winner"></div>
 
     </body>
     

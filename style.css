@@ -1,0 +1,73 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    border: 2px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#scoreBoard {
+    border: 2px black solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+#scoreBoardTitle {
+    border: 2px black solid;
+    margin: 10px;
+}
+
+#winnerMessage {
+    border: 2px black solid;
+    margin: 10px;
+}
+
+#roundCount {
+    border: 2px black solid;
+    margin: 10px;
+}
+
+#scoreCount {
+    border: 2px black solid;
+    display: flex;
+    margin: 10px;
+}
+
+#choiceDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border: 2px black solid;
+    margin: 10px;
+}
+
+#playerChoice {
+    border: 2px black solid;
+    margin: 10px;
+}
+
+#computerChoice {
+    border: 2px black solid;
+    margin: 10px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border: 2px black solid;
+    margin: 10px;
+}
