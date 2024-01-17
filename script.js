@@ -45,7 +45,7 @@ function isGameOver() {
 
 // --- UI --- //
 
-// add an event listener to all three buttons that triggers a round
+// add an event listener to all three buttons to trigger a round
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorBtn = document.getElementById('scissorBtn');
@@ -54,9 +54,16 @@ rockBtn.addEventListener('click', clickListener('ROCK'))
 paperBtn.addEventListener('click', clickListener('PAPER'))
 scissorBtn.addEventListener('click', clickListener('SCISSORS'))
 
+// roll up all the function calls that form a round played into the click call
+
 function clickListener() {
     
     // call playRound 
     // call updateScores
     // call getRandomChoice
+
+}
+
+function updateScoreboard() {
+    
 }
