@@ -27,11 +27,11 @@ function clickEvent(playerChoice) {
   playRound(playerChoice, computerChoice);
   // call our function to update playerChoiceElement and computerChoiceElement
   updateChoices(playerChoice, computerChoice);
-  // call our function to update playerScoreElement and computerScoreElement
-  updateScore(playerScore, computerScore);
+  // call our function to update winnerMessageElement, playerScoreElement and computerScoreElement
+  updateScoreBoard(playerScore, computerScore);
 }
 
-// write a function to generate a choice for the computer
+// generate a choice for the computer
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3);
   console.log(randomNumber);
@@ -43,5 +43,35 @@ function getComputerChoice() {
       return 'PAPER'
     case 2:
       return 'SCISSORS'
+  }
+}
+
+// use our player and computer choices to play one round
+let roundWinner = ``;
+let playerScore = 0;
+let computerScore = 0;
+
+function playRound(playerChoice, computerChoice) {
+  // tie results
+  if (playerChoice === computerChoice){
+    roundWinner = `It's a tie!`
+  }
+  // player win results
+  if (
+    (playerChoice == 'ROCK' && computerChoice == 'SCISSORS') ||
+    (playerChoice == 'PAPER' && computerChoice == 'ROCK') ||
+    (playerChoice == 'SCISSORS' && computerChoice == 'PAPER')
+  ) {
+    roundWinner = `You win!`
+    playerScore++
+  }
+  // computer win results
+  if (
+    (computerChoice == 'ROCK' && playerChoice == 'SCISSORS') ||
+    (computerChoice == 'PAPER' && playerChoice == 'ROCK') ||
+    (computerChoice == 'SCISSORS' && playerChoice == 'PAPER')
+  ) {
+    roundWinner = `You lose :(`
+    computerScore++
   }
 }
