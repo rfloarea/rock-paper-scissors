@@ -32,3 +32,16 @@ function clickEvent(playerChoice) {
 }
 
 // write a function to generate a choice for the computer
+function getComputerChoice() {
+  let randomNumber = Math.floor(Math.random() * 3);
+  console.log(randomNumber);
+
+  switch (randomNumber) {
+    case 0:
+      return 'ROCK'
+    case 1:
+      return 'PAPER'
+    case 2:
+      return 'SCISSORS'
+  }
+}
