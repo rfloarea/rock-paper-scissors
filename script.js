@@ -13,7 +13,7 @@ const computerChoiceElement = document.getElementById('computerChoice');
 
 const playerScoreElement = document.getElementById('playerScore');
 const computerScoreElement = document.getElementById('computerScore');
-const winnerMessageElement = document.getElementById('winnerMessage');
+const roundWinnerElement = document.getElementById('winnerMessage');
 
 // create our event listeners to get the player's selection
 rockBtn.addEventListener('click', () => clickEvent('ROCK'));
@@ -83,7 +83,7 @@ function updateChoiceElements(playerChoice, computerChoice) {
 }
 
 function updateScoreBoard(roundWinner, playerScore, computerScore) {
-  roundWinnerElement.textContent = roundWinner;
+  roundWinnerElement.textContent = `${roundWinner}`;
   playerScoreElement.textContent = `Player score: ${playerScore}`;
   computerScoreElement.textContent = `Computer score: ${computerScore}`;
 }
