@@ -34,3 +34,6 @@ I've completed the first pass of the ui. Having the major pieces of the ui in pl
 That bears repeating: THIS IS A SIMPLE GAME.
 
 I just need to remind myself of this sometimes. I tend to want to do so much with every little idea. It's like every little spark has to turn into this massive blaze. When practically, I'm not equipped to handle a massive blaze. I'm just learning how to start and grow a small fire. Just enough to keep me warm until the next one.
+
+*later that same day* @2:10pm
+Today I learned that putting the script tag at the bottom of the html page helps. I'm sure it has something to do with page load and eventing. I'll become fluent some day. But for now, it's good enough to know to do it.
