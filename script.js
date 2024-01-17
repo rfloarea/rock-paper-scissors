@@ -49,7 +49,7 @@ function getComputerChoice() {
 function playRound(playerChoice, computerChoice) {
   // tie results
   if (playerChoice === computerChoice){
-    roundWinner = `tie`
+    roundWinner = `It's a tie`
   }
   // player win results
   if (
@@ -57,7 +57,7 @@ function playRound(playerChoice, computerChoice) {
     (playerChoice == 'PAPER' && computerChoice == 'ROCK') ||
     (playerChoice == 'SCISSORS' && computerChoice == 'PAPER')
   ) {
-    roundWinner = `player`
+    roundWinner = `You won!`
     playerScore++
   }
   // computer win results
@@ -66,7 +66,7 @@ function playRound(playerChoice, computerChoice) {
     (computerChoice == 'PAPER' && playerChoice == 'ROCK') ||
     (computerChoice == 'SCISSORS' && playerChoice == 'PAPER')
   ) {
-    roundWinner = `computer`
+    roundWinner = `You lost`
     computerScore++
   }
   // call our function to update playerChoiceElement and computerChoiceElement
@@ -84,6 +84,6 @@ function updateChoiceElements(playerChoice, computerChoice) {
 
 function updateScoreBoard(roundWinner, playerScore, computerScore) {
   roundWinnerElement.textContent = `${roundWinner}`;
-  playerScoreElement.textContent = `Player score: ${playerScore}`;
+  playerScoreElement.textContent = `Your score: ${playerScore}`;
   computerScoreElement.textContent = `Computer score: ${computerScore}`;
 }
