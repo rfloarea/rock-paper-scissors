@@ -1,63 +1,44 @@
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
+// ROCK, PAPER, SCISSORS //
 
-function getPlayerChoice() {
+let playerScore = 0
+let computerScore = 0
+let roundWinner = ''
 
-    let playerChoice = prompt("Choose rock, paper, or scissors.").toLowerCase();
-    
-    console.log(`You chose: ${playerChoice}`);
-    
-    return playerChoice;
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    roundWinner = 'tie'
+  }
+  if (
+    (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
+    (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') ||
+    (playerSelection === 'PAPER' && computerSelection === 'ROCK')
+  ) {
+    playerScore++
+    roundWinner = 'player'
+  }
+  if (
+    (computerSelection === 'ROCK' && playerSelection === 'SCISSORS') ||
+    (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') ||
+    (computerSelection === 'PAPER' && playerSelection === 'ROCK')
+  ) {
+    computerScore++
+    roundWinner = 'computer'
+  }
+  updateScoreMessage(roundWinner, playerSelection, computerSelection)
 }
 
-
-function getComputerChoice(computerChoice) {
-    
-	computerChoice = Math.floor(Math.random() * 3);
-    
-	if (computerChoice == 0) {
-		computerChoice = "rock";
-        console.log(`I chose: ${computerChoice}`);
-		return computerChoice;
-	} else if (computerChoice == 1) {
-		computerChoice = "paper";
-        console.log(`I chose: ${computerChoice}`);
-		return computerChoice;
-	} else {
-		computerChoice = "scissors";
-        console.log(`I chose: ${computerChoice}`);
-		return computerChoice;
-	}
+function getRandomChoice() {
+  let randomNumber = Math.floor(Math.random() * 3)
+  switch (randomNumber) {
+    case 0:
+      return 'ROCK'
+    case 1:
+      return 'PAPER'
+    case 2:
+      return 'SCISSORS'
+  }
 }
 
-
-let roundWinner = ``;
-let playerScore = 0;
-let computerScore = 0;
-
-playRound(playerChoice, computerChoice);
-
-function playRound(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice) {
-        roundWinner = `It's a draw.`
-    }
-    else if (
-        (playerChoice === `rock` && computerChoice === `scissors`) ||
-        (playerChoice === `paper` && computerChoice === `rock`) ||
-        (playerChoice === `scissors` && computerChoice === `paper`)
-    ) {
-        ++playerScore
-        roundWinner = `You win!`
-    }
-    else if (
-        (computerChoice === `rock` && playerChoice === `scissors`) ||
-        (computerChoice === `paper` && playerChoice === `rock`) ||
-        (computerChoice === `scissors` && playerChoice === `paper`)
-    ) {
-        ++computerScore
-        roundWinner = `I win!`
-    }
-    console.log(roundWinner)
-    console.log(`Your score is: ${playerScore}`)
-    console.log(`My score is: ${computerScore}`)
+function isGameOver() {
+  return playerScore === 5 || computerScore === 5
 }
