@@ -79,3 +79,14 @@ footer {
     border: 2px black solid;
     margin: 10px;
 }
+
+#modal {
+    display: none;
+    display: flex;
+    position: fixed;
+    border: 1px black solid;
+}
+
+#modal.active {
+    display: block;
+}
