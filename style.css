@@ -69,10 +69,3 @@
     margin: 10px;
     gap: 20px;
 }
-
-#modal {
-    display: none;
-    position: fixed;
-    border: 2px black solid;
-    padding: 20px;
-}
