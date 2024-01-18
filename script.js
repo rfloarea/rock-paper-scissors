@@ -17,12 +17,22 @@ const modalTextElement = document.getElementById('modalText');
 rockBtn.addEventListener('click', () => clickEvent('ROCK'));
 paperBtn.addEventListener('click', () => clickEvent('PAPER'));
 scissorBtn.addEventListener('click', () => clickEvent('SCISSORS'));
-playAgainBtn.addEventListener('click', () => resetGame);
+playAgainBtn.addEventListener('click', () => hideModal);
 
 function clickEvent(playerChoice) {
-  const computerChoice = getComputerChoice();
-  playRound(playerChoice, computerChoice);
+
   if (isGameOver()) {
+    modalElement.style.display = modalElement.style.display === 'none' ? '' : 'none';
+    //showModal();
+    return;
+  }
+
+  const computerChoice = getComputerChoice();
+  updateChoiceElements(playerChoice, computerChoice);
+  playRound(playerChoice, computerChoice);
+  
+  if (isGameOver()) {
+    showModal();
     resetGame();
   }
 }
@@ -60,7 +70,6 @@ function playRound(playerChoice, computerChoice) {
     roundWinner = `You lost`
     computerScore++
   }
-  updateChoiceElements(playerChoice, computerChoice);
   updateScoreBoard(roundWinner, playerScore, computerScore);
 }
 
@@ -80,10 +89,12 @@ function isGameOver() {
 }
 
 function showModal() {
-  modalElement.classList.add('active');
-  return playerScore > computerScore
-    ? (modalTextElement.textContent = `You won!`)
-    : (modalTextElement.textContent = `You lost`)
+  //modalElement.style.removeProperty('display: none;');
+  modalElement.style.display = modalElement.style.display === 'none' ? '' : 'none';
+}
+
+function hideModal() {
+  modalElement.style.setProperty('display: none;');
 }
 
 function resetGame() {
@@ -94,5 +105,10 @@ function resetGame() {
   playerChoiceElement.textContent = ` `;
   computerChoiceElement.textContent = ` `;
   roundWinnerElement.textContent = ` `;
-  modalElement.classList.remove('active');
+}
+
+function updateModalTextElement() {
+  return playerScore > computerScore
+    ? (modalTextElement.textContent = `You won!`)
+    : (modalTextElement.textContent = `You lost`);
 }
