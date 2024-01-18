@@ -7,7 +7,7 @@
     margin: 0;
 }
 
-header {
+.header {
     border: 2px black solid;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@ header {
     margin: 10px;
 }
 
-#scoreBoard {
+.score-board {
     border: 2px black solid;
     display: flex;
     flex-direction: column;
@@ -23,61 +23,51 @@ header {
     margin: 10px;
 }
 
-#scoreBoardTitle {
+.score-board-info {
     border: 2px black solid;
     margin: 10px;
+    text-align: center;
 }
 
-#winnerMessage {
-    border: 2px black solid;
-    margin: 10px;
-}
-
-#roundCount {
-    border: 2px black solid;
-    margin: 10px;
-}
-
-#scoreCount {
-    border: 2px black solid;
+.score-container {
     display: flex;
+    border: 2px black solid;
     margin: 10px;
-}
-
-#choiceDisplay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 30px;
-    border: 2px black solid;
-    margin: 10px;
 }
 
-#playerChoice {
-    border: 2px black solid;
-    margin: 10px;
-}
-
-#computerChoice {
-    border: 2px black solid;
-    margin: 10px;
-}
-
-#buttons {
+.choice-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px black solid;
+    margin: 10px;
     gap: 30px;
-    border: 2px black solid;
-    margin: 10px;
 }
 
-footer {
+.player-choice-element,
+.computer-choice-element {
+    text-align: center;
+}
+
+.button-container {
+    border: 2px black solid;
+    margin: 10px;
+    text-align: center;
+}
+
+.choice-button {
+    margin: 10px;
+    padding: 10px;
+}
+
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px black solid;
     margin: 10px;
+    gap: 20px;
 }
 
 #modal {
