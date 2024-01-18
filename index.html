@@ -8,53 +8,60 @@
     </head>
     <body>
         
-        <header>
-            <h1>Let's play rock, paper, scissors!</h1>
+        <header class="header">
+            <h1 class="title">Let's play rock, paper, scissors!</h1>
         </header>
 
         <main class="main">
 
-            <div id="scoreBoard">
-                <div id="scoreBoardTitle">
-                    <h2>Score Board</h2>
+            <div class="score-board">
+
+                <div class="score-board-info">
+                    <h2 class="score-board-title">Score Board</h2>
+                    <p class="score-board-para">First to five points wins!</p>
                 </div>
-                <div id="winnerMessage">First to 5 points wins!</div>
-                <div id="scoreCount">
-                    <div id="playerScore">Your score: </div>
-                    <div id="computerScore">Computer score: </div>
+                
+                <div class="score-container">
+                    <div class="player-score" id="playerScore">Your score: 0</div>
+                    <div class="computer-score" id="computerScore">Computer score: 0</div>
                 </div>
             </div>
     
-            <div id="choiceDisplay">
-                <div id="playerChoiceElement">
-                    <div>Your Choice</div>
-                    <div id="playerChoice"></div> 
+            <div class="choice-container">
+
+                <div class="player-choice-element" id="playerChoiceElement">
+                    <div class="player-choice-label">Your Choice</div>
+                    <div class="player-choice" id="playerChoice">...</div> 
                 </div>
-                <div id="computerChoiceElement">
-                    <div>Computer Choice</div>
-                    <div id="computerChoice"></div>
+
+                <div class="computer-choice-element" id="computerChoiceElement">
+                    <div class="computer-choice-label">Computer Choice</div>
+                    <div class="computer-choice" id="computerChoice">...</div>
                 </div>
                 
             </div>
     
-            <div id="buttons">
-                <button id="rockBtn">Rock</button>
-                <button id="paperBtn">Paper</button>
-                <button id="scissorBtn">Scissors</button>
+            <div class="button-container">
+
+                <button class="button" id="rockBtn">Rock</button>
+                <button class="button" id="paperBtn">Paper</button>
+                <button class="button" id="scissorBtn">Scissors</button>
+            
             </div>
         </main>
         
 
-        <footer>
-            <p>playfully made by, rowen floarea</p>
+        <footer class="footer">
+            <p class="footer-text">playfully made by, rowen floarea</p>
+            <a href="https://github.com/rfloarea/rock-paper-scissors" target="_blank">Link to code</a>
         </footer>
 
-        <div id="modal">
-            <div id="modalText"></div>
-            <button id="modalBtn">Play Again</button>
+        <div class="modal" id="modal">
+            <p class="modal-text" id="modalText"></p>
+            <button class="modal-button" id="restartButton">Play Again</button>
         </div>
 
-        <div id="overlay"></div>
+        <div class="overlay" id="overlay"></div>
 
         <script src="./script.js"></script>
 
