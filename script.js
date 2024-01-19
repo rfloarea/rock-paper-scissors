@@ -94,11 +94,19 @@ function isGameOver() {
 }
 
 function showOverlay() {
-  // alter the overlay properties such that is becomes visible, but behind modal
+  document.getElementById('overlay').style.display = 'block';
+}
+
+function hideOverlay() {
+  document.getElementById('overlay').style.display = 'none';
 }
 
 function showModal() {
-  // alter the modal properties such that is becomes visible
+
+}
+
+function hideModal() {
+
 }
 
 function resetGame() {
