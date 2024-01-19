@@ -14,12 +14,14 @@ const computerScoreInput = document.getElementById('computerScore');
 const roundWinnerInput = document.getElementById('roundWinner');
 const modalTextElement = document.getElementById('modalText');
 const playAgainBtn = document.getElementById('playAgainButton')
+const overlay = document.getElementById('overlay');
+const modal = document.getElementById('modal');
 
 // use click event listeners on buttons for player input: rock, paper, or scissors
 rockBtn.addEventListener('click', () => clickEvent('ROCK'));
 paperBtn.addEventListener('click', () => clickEvent('PAPER'));
 scissorBtn.addEventListener('click', () => clickEvent('SCISSORS'));
-playAgainBtn.addEventListener('click', () => resetGame);
+playAgainBtn.addEventListener('click', () => resetGame());
 
 // pass the user input into a function that triggers a game round
 function clickEvent(playerChoice) {
@@ -91,11 +93,11 @@ function isGameOver() {
 }
 
 function showOverlay() {
-  document.getElementById('overlay').style.display = 'block';
+  overlay.classList.add('active');
 }
 
 function hideOverlay() {
-  document.getElementById('overlay').style.display = 'none';
+  overlay.classList.remove('active');
 }
 
 function updateModalTextElement() {
@@ -105,11 +107,11 @@ function updateModalTextElement() {
 }
 
 function showModal() {
-  document.getElementById('modal').style.display = 'block';
+  modal.classList.add('active');
 }
 
 function hideModal() {
-  document.getElementById('modal').style.display = 'none';
+  modal.classList.remove('active');
 }
 
 function resetGame() {
@@ -119,8 +121,9 @@ function resetGame() {
   computerScoreInput.textContent = `Computer score: 0`;
   playerChoiceInput.textContent = ` `;
   computerChoiceInput.textContent = ` `;
-  roundWinnerInput.textContent = ` `;
-  // close modal
+  roundWinnerInput.textContent = `Round winner: `;
+  hideOverlay();
+  hideModal();
 }
 
 
