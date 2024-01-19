@@ -1,39 +1,45 @@
+// initialize global variables
 let roundWinner = ` `;
 let playerScore = 0;
 let computerScore = 0;
 
+// initialize variables for selected elements
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorBtn = document.getElementById('scissorBtn');
-const playerChoiceElement = document.getElementById('playerChoice');
-const computerChoiceElement = document.getElementById('computerChoice');
-const playerScoreElement = document.getElementById('playerScore');
-const computerScoreElement = document.getElementById('computerScore');
-const roundWinnerElement = document.getElementById('winnerMessage');
-const playAgainBtn = document.getElementById('modalBtn');
-const modalElement = document.getElementById('modal');
+const playerChoiceInput = document.getElementById('playerChoice');
+const computerChoiceInput = document.getElementById('computerChoice');
+const playerScoreInput = document.getElementById('playerScore');
+const computerScoreInput = document.getElementById('computerScore');
+const roundWinnerInput = document.getElementById('roundWinner');
 const modalTextElement = document.getElementById('modalText');
+const playAgainBtn = document.getElementById('playAgainButton')
 
+// use click event listeners on buttons for player input: rock, paper, or scissors
 rockBtn.addEventListener('click', () => clickEvent('ROCK'));
 paperBtn.addEventListener('click', () => clickEvent('PAPER'));
 scissorBtn.addEventListener('click', () => clickEvent('SCISSORS'));
-playAgainBtn.addEventListener('click', () => hideModal);
+playAgainBtn.addEventListener('click', () => resetGame);
 
+// pass the user input into a function that triggers a game round
 function clickEvent(playerChoice) {
-
-  if (isGameOver()) {
-    modalElement.style.display = modalElement.style.display === 'none' ? '' : 'none';
-    //showModal();
-    return;
-  }
-
+  // run a function that generates the computer's choice and initialize a variable
   const computerChoice = getComputerChoice();
+  // pass player and computer choices as args into a function that updates choice elements
   updateChoiceElements(playerChoice, computerChoice);
+  // pass same choice values as args into the game logic function
   playRound(playerChoice, computerChoice);
+  // pass the results of the round as args into a function that updates the score board
+  updateScoreBoard(roundWinner, playerScore, computerScore);
   
+  // if a player's score is 5, then call a function that ends and resets the game
   if (isGameOver()) {
+    // pull overlay in front of page body
+    showOverlay();
+    // update the modal's text: "You won!" or "You lost :("
+    updateModalTextElement();
+    // pull the modal in front of all elements
     showModal();
-    resetGame();
   }
 }
 
@@ -70,41 +76,40 @@ function playRound(playerChoice, computerChoice) {
     roundWinner = `You lost`
     computerScore++
   }
-  updateScoreBoard(roundWinner, playerScore, computerScore);
 }
 
 function updateChoiceElements(playerChoice, computerChoice) {
-  playerChoiceElement.textContent = playerChoice;
-  computerChoiceElement.textContent = computerChoice;
+  playerChoiceInput.textContent = playerChoice;
+  computerChoiceInput.textContent = computerChoice;
 }
 
 function updateScoreBoard(roundWinner, playerScore, computerScore) {
-  roundWinnerElement.textContent = `${roundWinner}`;
-  playerScoreElement.textContent = `Your score: ${playerScore}`;
-  computerScoreElement.textContent = `Computer score: ${computerScore}`;
+  roundWinnerInput.textContent = `${roundWinner}`;
+  playerScoreInput.textContent = `Your score: ${playerScore}`;
+  computerScoreInput.textContent = `Computer score: ${computerScore}`;
 }
 
 function isGameOver() {
   return playerScore == 5 || computerScore == 5
 }
 
-function showModal() {
-  //modalElement.style.removeProperty('display: none;');
-  modalElement.style.display = modalElement.style.display === 'none' ? '' : 'none';
+function showOverlay() {
+  // alter the overlay properties such that is becomes visible, but behind modal
 }
 
-function hideModal() {
-  modalElement.style.setProperty('display: none;');
+function showModal() {
+  // alter the modal properties such that is becomes visible
 }
 
 function resetGame() {
   playerScore = 0;
-  playerScoreElement.textContent = `Your score: 0`;
+  playerScoreInput.textContent = `Your score: 0`;
   computerScore = 0;
-  computerScoreElement.textContent = `Computer score: 0`;
-  playerChoiceElement.textContent = ` `;
-  computerChoiceElement.textContent = ` `;
-  roundWinnerElement.textContent = ` `;
+  computerScoreInput.textContent = `Computer score: 0`;
+  playerChoiceInput.textContent = ` `;
+  computerChoiceInput.textContent = ` `;
+  roundWinnerInput.textContent = ` `;
+  // close modal
 }
 
 function updateModalTextElement() {
