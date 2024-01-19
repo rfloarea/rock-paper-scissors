@@ -16,6 +16,8 @@ Notes to my future self:
     Bonus: it helps you learn how JS moves through a script. With enough use you should begin to internalize the call stack. Which I'm sure is very important.
 3. Learn more about scope. Pay attention to this concept when you get back to coding. I think this is going to trip you up a lot in the near future.
 
+---
+
 Tuesday, January 9, 2024 @5:20pm
 
 I did it! I figured out how to create a single loop of the game, but using functions this time! Dam that tied my brain up. But only because I didn't really understand how to implement the logic.
@@ -27,6 +29,8 @@ Now all that's left (for right now) is to create a way to keep score over many r
 Notes to future self:
 1. Remember this feeling. Remember how bad it feels to not find a solution while it feels so close. Remember how good it feels to spend the time to understand, and then *see* a solution.
 
+---
+
 Wednesday, January 17th @11:22am
 
 I've completed the first pass of the ui. Having the major pieces of the ui in place helps so much in conceptualizing how the js code should be written. Now that I can see where all the changes are going to go and where all the events are going to come from, it feels much clearer to design a program to handle this simple game.
@@ -37,3 +41,19 @@ I just need to remind myself of this sometimes. I tend to want to do so much wit
 
 *later that same day* @2:10pm
 Today I learned that putting the script tag at the bottom of the html page helps. I'm sure it has something to do with page load and eventing. I'll become fluent some day. But for now, it's good enough to know to do it.
+
+---
+
+Thursday, January 18th @8:44pm
+
+I finished the game. Or what I will call the first version of the game.
+
+I'm smiling.
+
+Notes to me future self (or, things I've learned):
+- It is beneficial to separate my concerns as much as possible in the code. What taught me that was how useful is was to give html element classes to css and ids to js. Setting this standard for myself smoothed things much more than I would have guess.
+- Stop coding if I don't understand. Stop trying to understand if I can't think clearly. If I can't think clearly, rest.
+- It's okay to see how other people solved things. I would say that at this early point in my learning journey, it's even okay to rely *heavily* on someone else's work. Just as long as I take the time to understand why they did what they did. The point isn't to copy and paste. The point is to emulate and understand the decisions of people who are more capable than I am.
+- Most importantly, I've felt what it's like to have a good programming posture. I'll just leave it at that.
+
+Time for our next project!!!
