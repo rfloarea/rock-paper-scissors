@@ -32,13 +32,10 @@ function clickEvent(playerChoice) {
   // pass the results of the round as args into a function that updates the score board
   updateScoreBoard(roundWinner, playerScore, computerScore);
   
-  // if a player's score is 5, then call a function that ends and resets the game
+  // if a player's score is 5, then stop the game and show the replay modal
   if (isGameOver()) {
-    // pull overlay in front of page body
     showOverlay();
-    // update the modal's text: "You won!" or "You lost :("
     updateModalTextElement();
-    // pull the modal in front of all elements
     showModal();
   }
 }
@@ -101,12 +98,18 @@ function hideOverlay() {
   document.getElementById('overlay').style.display = 'none';
 }
 
-function showModal() {
+function updateModalTextElement() {
+  return playerScore > computerScore
+    ? (modalTextElement.textContent = `You won!`)
+    : (modalTextElement.textContent = `You lost`);
+}
 
+function showModal() {
+  document.getElementById('modal').style.display = 'block';
 }
 
 function hideModal() {
-
+  document.getElementById('modal').style.display = 'none';
 }
 
 function resetGame() {
@@ -120,8 +123,4 @@ function resetGame() {
   // close modal
 }
 
-function updateModalTextElement() {
-  return playerScore > computerScore
-    ? (modalTextElement.textContent = `You won!`)
-    : (modalTextElement.textContent = `You lost`);
-}
+
