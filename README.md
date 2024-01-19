@@ -1,6 +1,10 @@
-# rock-paper-scissors
+# Project: Rock Paper Scissors
 
-## Project Log (or plog :P)
+[Live demo here](https://rfloarea.github.io/rock-paper-scissors/)
+
+Thank you to [The Odin Project](https://github.com/TheOdinProject), and to Michal Osman for [his code](https://michalosman.github.io/rock-paper-scissors/). He doesn't know it, but he was my Miyagi for this one.
+
+## Plog (project log)
 
 Sunday, January 7, 2024 @8:59pm
 
@@ -51,9 +55,11 @@ I finished the game. Or what I will call the first version of the game.
 I'm smiling.
 
 Notes to me future self (or, things I've learned):
-- It is beneficial to separate my concerns as much as possible in the code. What taught me that was how useful is was to give html element classes to css and ids to js. Setting this standard for myself smoothed things much more than I would have guess.
+- It is beneficial to separate my concerns as much as possible in the code. For example, using one function to do one thing was huge. Also mentally assigning html classes to css rules and ids for js element selectors. Setting this standard for myself smoothed things much more than I would have guess.
 - Stop coding if I don't understand. Stop trying to understand if I can't think clearly. If I can't think clearly, rest.
 - It's okay to see how other people solved things. I would say that at this early point in my learning journey, it's even okay to rely *heavily* on someone else's work. Just as long as I take the time to understand why they did what they did. The point isn't to copy and paste. The point is to emulate and understand the decisions of people who are more capable than I am.
-- Most importantly, I've felt what it's like to have a good programming posture. I'll just leave it at that.
+- I've felt what it's like to have a good programming posture. I'll just leave it at that.
+
+---
 
 Time for our next project!!!
